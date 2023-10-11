@@ -3,38 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relógio online</title>
-    <link rel="stylesheet" href="estilos/style.css">
+    <title>Contador</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Hora do Dia</h1>
+        <h1>Vamos contar</h1>
     </header>
     <section id="fundo-meio">
-        <div id="horario">
-            <h2>Agora são 00:00 horas.</h2>
+        <div id="formulario">
+            <p>
+                Início: <input type="number" name="inicio" id="inicio">
+            </p>
+            <p>
+                Fim: <input type="number" name="fim" id="fim">
+            </p>
+            <p>
+                Passo: <input type="number" name="passo" id="passo">
+            </p>
+            <p>
+                <input id="button" type="button" value="Contar">
+            </p>
         </div>
-        <div id="imagem">
-            <img id="jpg" src="img/manha.jpg" alt="">
+        <div id="res">
+            <p>Preparando a contagem...</p>
         </div>
     </section>
     <footer>
         <p>© CursoEmVídeo</p>
     </footer>
-    <script>
-        var agora = new Date()
-        var hora = agora.getHours()
-        var horario = document.getElementById('horario')
-        horario.innerHTML = `Agora são ${hora} horas.`
-        if (hora > 12 && hora < 18) {
-            //document.querySelector('body').style.background = 'rgb(95, 167, 201)'
-            document.body.style.background = 'rgb(95, 167, 201)'
-            document.getElementById('jpg').src = 'img/tarde.jpg'
-        } else if (hora >= 18 && hora < 24) {
-            document.querySelector('body').style.background = 'rgb(34, 31, 46)'
-            //document.body.style.background = 'rgb(34, 31, 46)'
-            document.getElementById('jpg').src = 'img/noite.jpg'
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
